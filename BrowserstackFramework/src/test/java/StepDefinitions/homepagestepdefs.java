@@ -35,12 +35,12 @@ public class homepagestepdefs {
 		
 	}
 	
-	@After()
+	/*@After()
 	public void firstafter(){
 		System.out.println("after Method");
 		webconnector.driver.quit();
 		
-	}
+	}*/
 	
 	/*@After("@web")
 	public void secondafter(){

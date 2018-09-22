@@ -134,7 +134,6 @@
         <reuseForks>true</reuseForks>
                         <includes>
                             <include>Runner.runnerclass.java</include>
-                <!--            <include>Runner.runnerclass2.java</include>-->  
                         </includes>
                     </configuration>
             </plugin>
