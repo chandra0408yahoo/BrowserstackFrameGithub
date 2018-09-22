@@ -44,11 +44,8 @@ public class webconnector {
 	/////////////////////////////////////// OPEN BROWSER////////////////////////////////////////////////////////
 	public static WebDriver open_browser() throws MalformedURLException {
 
-
 		if (driver == null) {
-
-			if (getbrowsername().equalsIgnoreCase("Firefox")) {
-				
+			if (getbrowser().equalsIgnoreCase("Firefox")) {
 				DesiredCapabilities capability = DesiredCapabilities.chrome();
 			    capability.setPlatform(Platform.WINDOWS);
 			    capability.setCapability("build", "JUnit - Sample");

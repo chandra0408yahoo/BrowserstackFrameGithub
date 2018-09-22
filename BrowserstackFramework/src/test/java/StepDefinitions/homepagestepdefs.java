@@ -17,12 +17,10 @@ public class homepagestepdefs {
 
 	public homepagemethods homepage_method;
 
-	//dfkdjfjf
-	//fdsfhfdshf
     public homepagestepdefs() throws IOException {
-    	webconnector.intialise();
-      homepage_method  =PageFactory.initElements(webconnector.open_browser(),homepagemethods.class);
-
+    webconnector.intialise();
+    homepage_method  =PageFactory.initElements(webconnector.open_browser(),homepagemethods.class);
+      
     }
     
 	@Before()
