@@ -3,15 +3,19 @@ package Utilities;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class webconnector {
 
@@ -38,16 +42,26 @@ public class webconnector {
 	}
 
 	/////////////////////////////////////// OPEN BROWSER////////////////////////////////////////////////////////
-	public static WebDriver open_browser() {
+	public static WebDriver open_browser() throws MalformedURLException {
 
 
 		if (driver == null) {
 
 			if (getbrowsername().equalsIgnoreCase("Firefox")) {
-				System.setProperty("webdriver.gecko.driver",
+				
+				DesiredCapabilities capability = DesiredCapabilities.chrome();
+			    capability.setPlatform(Platform.WINDOWS);
+			    capability.setCapability("build", "JUnit - Sample");
+			    driver = new RemoteWebDriver(
+			      new URL("https://chandrasekhar46:t5xApL32c33yw2zEvMZm@hub-cloud.browserstack.com/wd/hub"),capability );
+
+				
+				
+				
+			/*	System.setProperty("webdriver.gecko.driver",
 						"C:\\Users\\Chandra\\Desktop\\Ides\\firefoxdriver\\geckodriver.exe");
 				driver = new FirefoxDriver();
-				// FirefoxProfile fp = new FirefoxProfile();
+			*/	// FirefoxProfile fp = new FirefoxProfile();
 				// fp.setPreference("xpinstall.signatures.required", false);
 				// fp.setPreference("toolkit.telemetry.reportingpolicy.firstRun",
 				// false);
