@@ -48,7 +48,7 @@ public class webconnector {
 			if (getbrowser().equalsIgnoreCase("Firefox")) {
 				DesiredCapabilities capability = DesiredCapabilities.chrome();
 			    capability.setPlatform(Platform.WINDOWS);
-			    capability.setCapability("build", "JUnit - Sample");
+			    capability.setCapability("build2", "JUnit - Sample");
 			    driver = new RemoteWebDriver(
 			      new URL("https://chandrasekhar46:t5xApL32c33yw2zEvMZm@hub-cloud.browserstack.com/wd/hub"),capability );
 
